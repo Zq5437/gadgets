@@ -77,7 +77,7 @@ class PDFBatchDecryptor:
                 f"[green]✓ 找到 {len(pdf_files)} 个 PDF 文件[/green]")
 
         # 输出目录
-        default_output = str(input_path.parent / "decrypted_pdfs")
+        default_output = str(input_path.absolute()) + "_decrypted"
         output_dir = Prompt.ask("📁 输出目录", default=default_output)
         output_path = Path(output_dir).expanduser()
 
